@@ -51,6 +51,11 @@ pub fn decrypt(encoded: &str) -> Result<String> {
     anyhow::ensure!(parts.len() == 2, "Invalid encrypted format");
 
     let nonce_bytes = B64.decode(parts[0]).context("Failed to decode nonce")?;
+    anyhow::ensure!(
+        nonce_bytes.len() == 12,
+        "Invalid nonce length: expected 12 bytes, got {}",
+        nonce_bytes.len()
+    );
     let ciphertext = B64
         .decode(parts[1])
         .context("Failed to decode ciphertext")?;
@@ -127,6 +132,11 @@ pub fn decrypt_aes192(encoded: &str, key: &[u8; 24]) -> Result<Vec<u8>> {
     anyhow::ensure!(parts.len() == 2, "Invalid AES-192 encrypted format");
 
     let nonce_bytes = B64.decode(parts[0]).context("Failed to decode nonce")?;
+    anyhow::ensure!(
+        nonce_bytes.len() == 12,
+        "Invalid nonce length: expected 12 bytes, got {}",
+        nonce_bytes.len()
+    );
     let ciphertext = B64.decode(parts[1]).context("Failed to decode ciphertext")?;
 
     // 24バイトキーを32バイトに拡張

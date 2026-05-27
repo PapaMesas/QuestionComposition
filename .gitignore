@@ -10,3 +10,7 @@ outputs/config.toml
 
 # Generated output files (xlsx / xml produced by the app)
 InputMaterials/output_*.xlsx
+
+# Source rule files (important research content - encrypted at runtime)
+InputMaterials/test_development.md
+InputMaterials/test_guideline.md
