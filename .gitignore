@@ -1,0 +1,12 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Rust build artifacts
+questionComposition/target/
+
+# API key config (contains encrypted credentials)
+outputs/config.toml
+
+# Generated output files (xlsx / xml produced by the app)
+InputMaterials/output_*.xlsx

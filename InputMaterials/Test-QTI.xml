@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 http://www.imsglobal.org/xsd/qti/imsqti_v2p1.xsd" identifier="test_assessment" title="保健体育">
+  <itemBody>
+    <div>
+      <p>筋肉を3つに分けると、骨格筋と心筋と何ですか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">平滑筋</simpleChoice>
+      <simpleChoice identifier="choice_2">横紋筋</simpleChoice>
+      <simpleChoice identifier="choice_3">肋間筋</simpleChoice>
+      <simpleChoice identifier="choice_4">腱筋</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">平滑筋</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>筋肉の中で、意志で動かせる筋肉のことを何と言いますか</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">不随筋</simpleChoice>
+      <simpleChoice identifier="choice_2">随意筋</simpleChoice>
+      <simpleChoice identifier="choice_3">平滑筋</simpleChoice>
+      <simpleChoice identifier="choice_4">骨格筋</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">随意筋</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>体内で精子と卵子が出会って一つになる現象をなんと言いますか</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">受精卵</simpleChoice>
+      <simpleChoice identifier="choice_2">受精</simpleChoice>
+      <simpleChoice identifier="choice_3">交配</simpleChoice>
+      <simpleChoice identifier="choice_4">融合</simpleChoice>
+      <simpleChoice identifier="choice_5">排卵</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">受精</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>1（3）あ の状態になった卵子を何と言いますか</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">卵胞</simpleChoice>
+      <simpleChoice identifier="choice_2">受精卵</simpleChoice>
+      <simpleChoice identifier="choice_3">胚盤胞</simpleChoice>
+      <simpleChoice identifier="choice_4">卵子</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">受精卵</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>精液に含まれるのは、何ですか。適するものを答えよ。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">卵子</simpleChoice>
+      <simpleChoice identifier="choice_2">血液</simpleChoice>
+      <simpleChoice identifier="choice_3">尿</simpleChoice>
+      <simpleChoice identifier="choice_4">精子</simpleChoice>
+      <simpleChoice identifier="choice_5">リンパ液</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">精子</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>レントゲンで肺に影が映ったときは、どのような病気が考えられますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">結核</simpleChoice>
+      <simpleChoice identifier="choice_2">肺がん</simpleChoice>
+      <simpleChoice identifier="choice_3">肺炎</simpleChoice>
+      <simpleChoice identifier="choice_4">気胸</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">肺炎</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>心臓内の血管が詰まると、どのような病気になりますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">狭心症</simpleChoice>
+      <simpleChoice identifier="choice_2">心筋梗塞</simpleChoice>
+      <simpleChoice identifier="choice_3">心不全</simpleChoice>
+      <simpleChoice identifier="choice_4">動脈硬化</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">心筋梗塞</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>脳内の血管が詰まると、そのような病気になりますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">脳出血</simpleChoice>
+      <simpleChoice identifier="choice_2">脳梗塞</simpleChoice>
+      <simpleChoice identifier="choice_3">脳腫瘍</simpleChoice>
+      <simpleChoice identifier="choice_4">アルツハイマー病</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">脳梗塞</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>指に光を当てると、指先が赤く見えますが、これはどのような血管があるからですか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">動脈</simpleChoice>
+      <simpleChoice identifier="choice_2">静脈</simpleChoice>
+      <simpleChoice identifier="choice_3">毛細血管</simpleChoice>
+      <simpleChoice identifier="choice_4">血液</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">毛細血管</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>消化管が、消化をするものを口の方から肛門の方に動かすための動きをなと言いますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">収縮運動</simpleChoice>
+      <simpleChoice identifier="choice_2">反射運動</simpleChoice>
+      <simpleChoice identifier="choice_3">蠕動運動</simpleChoice>
+      <simpleChoice identifier="choice_4">運動神経</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">蠕動運動</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>消化する際に出す消化液にはどのようなものが含まれますか。その総称を答えよ。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">消化酸</simpleChoice>
+      <simpleChoice identifier="choice_2">消化ホルモン</simpleChoice>
+      <simpleChoice identifier="choice_3">消化栄養素</simpleChoice>
+      <simpleChoice identifier="choice_4">消化酵素</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">消化酵素</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>筋肉の中で、意志で動かせる筋肉のことを何と言いますか</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">不随意筋</simpleChoice>
+      <simpleChoice identifier="choice_2">骨格筋</simpleChoice>
+      <simpleChoice identifier="choice_3">平滑筋</simpleChoice>
+      <simpleChoice identifier="choice_4">随意筋</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">随意筋</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>指に光を当てると、指先が赤く見えますが、これはどのような血管があるからですか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">毛細血管</simpleChoice>
+      <simpleChoice identifier="choice_2">動脈</simpleChoice>
+      <simpleChoice identifier="choice_3">静脈</simpleChoice>
+      <simpleChoice identifier="choice_4">リンパ管</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">毛細血管</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>脳内の血管が詰まると、そのような病気になりますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">脳出血</simpleChoice>
+      <simpleChoice identifier="choice_2">脳腫瘍</simpleChoice>
+      <simpleChoice identifier="choice_3">脳震盪</simpleChoice>
+      <simpleChoice identifier="choice_4">脳卒中</simpleChoice>
+      <simpleChoice identifier="choice_5">アルツハイマー病</simpleChoice>
+      <simpleChoice identifier="choice_6">てんかん</simpleChoice>
+      <simpleChoice identifier="choice_7">脳梗塞</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">脳梗塞</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+  <itemBody>
+    <div>
+      <p>レントゲンで肺に影が映ったときは、どのような病気が考えられますか。</p>
+      <p><small>Guideline: デフォルト (InputMaterials)</small></p>
+    </div>
+    <choiceInteraction responseIdentifier="RESPONSE" shuffle="true">
+      <prompt>Select the correct answer:</prompt>
+      <simpleChoice identifier="choice_1">結核</simpleChoice>
+      <simpleChoice identifier="choice_2">肺癌</simpleChoice>
+      <simpleChoice identifier="choice_3">肺炎</simpleChoice>
+      <simpleChoice identifier="choice_4">気胸</simpleChoice>
+    </choiceInteraction>
+  </itemBody>
+  <responseProcessing>
+    <responseCondition>
+      <responseIf>
+        <match>
+          <variable identifier="RESPONSE"/>
+          <baseValue baseType="identifier">肺炎</baseValue>
+        </match>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+  </responseProcessing>
+</assessmentItem>

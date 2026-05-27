@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItems>
+  <!-- Subject: 保健体育 -->
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_001"
+    title="1（1）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_3</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>筋肉を3つに分けると、骨格筋と心筋と何ですか。</prompt>
+        <simpleChoice identifier="choice_1">横紋筋</simpleChoice>
+        <simpleChoice identifier="choice_2">筋膜</simpleChoice>
+        <simpleChoice identifier="choice_3">平滑筋</simpleChoice>
+        <simpleChoice identifier="choice_4">腱</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_002"
+    title="1（2）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_1</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>筋肉の中で、意志で動かせる筋肉のことを何と言いますか</prompt>
+        <simpleChoice identifier="choice_1">随意筋</simpleChoice>
+        <simpleChoice identifier="choice_2">不随意筋</simpleChoice>
+        <simpleChoice identifier="choice_3">横紋筋</simpleChoice>
+        <simpleChoice identifier="choice_4">平滑筋</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_003"
+    title="1（3）あ"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_3</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>体内で精子と卵子が出会って一つになる現象をなんと言いますか</prompt>
+        <simpleChoice identifier="choice_1">交配</simpleChoice>
+        <simpleChoice identifier="choice_2">発生</simpleChoice>
+        <simpleChoice identifier="choice_3">受精</simpleChoice>
+        <simpleChoice identifier="choice_4">分裂</simpleChoice>
+        <simpleChoice identifier="choice_5">成長</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_004"
+    title="1（3）い"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_1</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>1（3）あ の状態になった卵子を何と言いますか</prompt>
+        <simpleChoice identifier="choice_1">受精卵</simpleChoice>
+        <simpleChoice identifier="choice_2">卵胞</simpleChoice>
+        <simpleChoice identifier="choice_3">卵子</simpleChoice>
+        <simpleChoice identifier="choice_4">胚盤胞</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_005"
+    title="1（4）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_5</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>精液に含まれるのは、何ですか。適するものを答えよ。</prompt>
+        <simpleChoice identifier="choice_1">白血球</simpleChoice>
+        <simpleChoice identifier="choice_2">血小板</simpleChoice>
+        <simpleChoice identifier="choice_3">リンパ球</simpleChoice>
+        <simpleChoice identifier="choice_4">赤血球</simpleChoice>
+        <simpleChoice identifier="choice_5">精子</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_006"
+    title="2（1）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_3</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>レントゲンで肺に影が映ったときは、どのような病気が考えられますか。</prompt>
+        <simpleChoice identifier="choice_1">喘息</simpleChoice>
+        <simpleChoice identifier="choice_2">肺結核</simpleChoice>
+        <simpleChoice identifier="choice_3">肺炎</simpleChoice>
+        <simpleChoice identifier="choice_4">気胸</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_007"
+    title="2（2）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_4</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>心臓内の血管が詰まると、どのような病気になりますか。</prompt>
+        <simpleChoice identifier="choice_1">狭心症</simpleChoice>
+        <simpleChoice identifier="choice_2">心不全</simpleChoice>
+        <simpleChoice identifier="choice_3">動脈硬化</simpleChoice>
+        <simpleChoice identifier="choice_4">心筋梗塞</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_008"
+    title="2（3）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_2</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>脳内の血管が詰まると、そのような病気になりますか。</prompt>
+        <simpleChoice identifier="choice_1">脳出血</simpleChoice>
+        <simpleChoice identifier="choice_2">脳梗塞</simpleChoice>
+        <simpleChoice identifier="choice_3">脳腫瘍</simpleChoice>
+        <simpleChoice identifier="choice_4">アルツハイマー病</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_009"
+    title="2（4）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_1</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>指に光を当てると、指先が赤く見えますが、これはどのような血管があるからですか。</prompt>
+        <simpleChoice identifier="choice_1">毛細血管</simpleChoice>
+        <simpleChoice identifier="choice_2">静脈</simpleChoice>
+        <simpleChoice identifier="choice_3">動脈</simpleChoice>
+        <simpleChoice identifier="choice_4">血液</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_010"
+    title="2（5）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_2</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>消化管が、消化をするものを口の方から肛門の方に動かすための動きをなと言いますか。</prompt>
+        <simpleChoice identifier="choice_1">収縮運動</simpleChoice>
+        <simpleChoice identifier="choice_2">蠕動運動</simpleChoice>
+        <simpleChoice identifier="choice_3">吸収運動</simpleChoice>
+        <simpleChoice identifier="choice_4">輸送運動</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_011"
+    title="2（6）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_1</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>消化する際に出す消化液にはどのようなものが含まれますか。その総称を答えよ。</prompt>
+        <simpleChoice identifier="choice_1">消化酵素</simpleChoice>
+        <simpleChoice identifier="choice_2">消化酸</simpleChoice>
+        <simpleChoice identifier="choice_3">消化物質</simpleChoice>
+        <simpleChoice identifier="choice_4">消化液体</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_012"
+    title="3（1）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_4</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>筋肉の中で、意志で動かせる筋肉のことを何と言いますか</prompt>
+        <simpleChoice identifier="choice_1">不随筋</simpleChoice>
+        <simpleChoice identifier="choice_2">平滑筋</simpleChoice>
+        <simpleChoice identifier="choice_3">心筋</simpleChoice>
+        <simpleChoice identifier="choice_4">随意筋</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_013"
+    title="3（2）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_4</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>指に光を当てると、指先が赤く見えますが、これはどのような血管があるからですか。</prompt>
+        <simpleChoice identifier="choice_1">動脈</simpleChoice>
+        <simpleChoice identifier="choice_2">静脈</simpleChoice>
+        <simpleChoice identifier="choice_3">リンパ管</simpleChoice>
+        <simpleChoice identifier="choice_4">毛細血管</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_014"
+    title="4（1）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_5</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>脳内の血管が詰まると、そのような病気になりますか。</prompt>
+        <simpleChoice identifier="choice_1">脳出血</simpleChoice>
+        <simpleChoice identifier="choice_2">脳腫瘍</simpleChoice>
+        <simpleChoice identifier="choice_3">アルツハイマー病</simpleChoice>
+        <simpleChoice identifier="choice_4">てんかん</simpleChoice>
+        <simpleChoice identifier="choice_5">脳梗塞</simpleChoice>
+        <simpleChoice identifier="choice_6">脳萎縮</simpleChoice>
+        <simpleChoice identifier="choice_7">脳震盪</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+  <assessmentItem
+    xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 
+    http://www.imsglobal.org/xsd/qti/qtiv2p1/imsqti_v2p1.xsd"
+    identifier="item_015"
+    title="4（2）"
+    adaptive="false"
+    timeDependent="false">
+    <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="identifier">
+      <correctResponse>
+        <value>choice_4</value>
+      </correctResponse>
+    </responseDeclaration>
+    <outcomeDeclaration identifier="SCORE" cardinality="single" baseType="float">
+      <defaultValue>
+        <value>0</value>
+      </defaultValue>
+    </outcomeDeclaration>
+    <itemBody>
+      <choiceInteraction responseIdentifier="RESPONSE" shuffle="false" maxChoices="1">
+        <prompt>レントゲンで肺に影が映ったときは、どのような病気が考えられますか。</prompt>
+        <simpleChoice identifier="choice_1">喘息</simpleChoice>
+        <simpleChoice identifier="choice_2">結核</simpleChoice>
+        <simpleChoice identifier="choice_3">肺気腫</simpleChoice>
+        <simpleChoice identifier="choice_4">肺炎</simpleChoice>
+        <simpleChoice identifier="choice_5">肺がん</simpleChoice>
+        <simpleChoice identifier="choice_6">肺塞栓症</simpleChoice>
+        <simpleChoice identifier="choice_7">慢性閉塞性肺疾患</simpleChoice>
+        <simpleChoice identifier="choice_8">気管支炎</simpleChoice>
+      </choiceInteraction>
+    </itemBody>
+    <responseProcessing
+        template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"/>
+  </assessmentItem>
+</assessmentItems>

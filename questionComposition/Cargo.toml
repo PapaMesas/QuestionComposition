@@ -1,0 +1,58 @@
+[package]
+name = "question_composition"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "question_composition"
+path = "src/main.rs"
+
+[dependencies]
+# GUI framework
+eframe = { version = "0.27", features = ["default_fonts"] }
+egui = "0.27"
+egui-file-dialog = "0.5"
+
+# Excel read
+calamine = { version = "0.24", features = ["dates"] }
+
+# Excel write
+rust_xlsxwriter = "0.68"
+
+# Async HTTP runtime
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "blocking"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# Encryption (AES-256-GCM)
+aes-gcm = "0.10"
+rand = "0.8"
+
+# Base64 for storing ciphertext in TOML
+base64 = "0.22"
+
+# Error handling
+anyhow = "1"
+
+# SHA-256 for machine key derivation
+sha2 = "0.10"
+
+# File dialog (ネイティブファイル選択ダイアログ)
+rfd = "0.14"
+
+# 日時フォーマット (出力ファイル名生成用)
+chrono = "0.4"
+
+# XML generation (QTI・Moodle XML エクスポート用)
+quick-xml = { version = "0.31", features = ["serialize"] }
+
+[dev-dependencies]
+# テスト用一時ファイル生成
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
