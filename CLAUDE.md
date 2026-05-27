@@ -8,9 +8,9 @@ You are the Professional Developer of my personal AI system.
 
 ## アプリケーション仕様について
 
-- 現行アプリケーションの仕様は、「/Users/a-sakai/Claude-Code/VibeCoding/RUST/QuestionComposition/RequirementsSpecification」 内の「Requirements2add.md」に記述している
-  同時に、現行アプリケーションのの開発計画は、「/Users/a-sakai/Claude-Code/VibeCoding/RUST/QuestionComposition/outputs」内の「DevelopmentPlan.md」と「DevelopmentPlan_2026-05-26.md」として保存している
-- 仕様を変更した仕様書を、上記と同じフォルダの、「Requirements3add.md」として配置している
+- 現行アプリケーションの仕様は、「/Users/a-sakai/Claude-Code/VibeCoding/RUST/QuestionComposition/RequirementsSpecification」 内の「Requirements3add.md」に記述している
+  同時に、現行アプリケーションのの開発計画は、「/Users/a-sakai/Claude-Code/VibeCoding/RUST/QuestionComposition/outputs」内の「DevelopmentPlan.md」と「DevelopmentPlan_2026-05-26.md」、「DevelopmentPlan_2026-05-27.md」として保存している
+- 仕様を変更した仕様書を、上記と同じフォルダの、「Requirements4add.md」として配置している
 - 仕様の差分を確認する
 
 ## 振る舞いルール

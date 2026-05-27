@@ -10,8 +10,8 @@ use rand::Rng;
 use serde_json::Value;
 
 use crate::llm::{LlmClient, LlmRequest};
-use crate::model::{Question, QuestionWithChoices};
-use crate::rule_loader::RuleSet;
+use crate::model::{Question, QuestionWithChoices, DefaultRules};
+use crate::rule_loader::{RuleSet, decrypt_default_rules};
 
 /// LLM レスポンスを解析した結果
 struct LlmResponse {
@@ -285,4 +285,27 @@ mod tests {
         assert_eq!(result.guideline, "21, 27");
         Ok(())
     }
+}
+
+/// デフォルトルール（暗号化）を使用して選択肢を生成する
+/// デフォルトルールをAES-192で復号してからLLMプロンプトに渡す
+pub fn generate_choices_with_default(
+    client: &dyn LlmClient,
+    subject: &str,
+    question: &Question,
+    default_rules: &DefaultRules,
+    aes_key: &[u8; 24],
+) -> Result<QuestionWithChoices> {
+    // デフォルトルールを復号
+    let (dev_rule, guide_rule) = decrypt_default_rules(default_rules, aes_key)
+        .context("Failed to decrypt default rules")?;
+
+    // 両方のルールを結合してRuleSetを作成
+    let rules = RuleSet {
+        content: format!("{}\n\n---\n\n{}", dev_rule, guide_rule),
+        source_label: "デフォルトルール (暗号化保護)".to_string(),
+    };
+
+    // 通常の generate_choices を呼び出す
+    generate_choices(client, subject, question, &rules)
 }

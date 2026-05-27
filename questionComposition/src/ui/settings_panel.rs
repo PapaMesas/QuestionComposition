@@ -60,23 +60,43 @@ pub fn show(ui: &mut Ui, state: &mut AppState) {
 
     ui.add_space(8.0);
 
-    // 保存ボタン
-    if ui.button("APIキーを保存").clicked() {
-        if state.api_key_input.trim().is_empty() {
-            state.settings_message = Some("⚠ APIキーを入力してください".to_string());
-        } else {
-            match config::store_api_key(&mut state.config, state.api_key_input.trim()) {
-                Ok(_) => {
-                    state.api_key_registered = true;
-                    state.api_key_input.clear();
-                    state.settings_message = Some("✓ APIキーを暗号化して保存しました".to_string());
-                }
-                Err(e) => {
-                    state.settings_message = Some(format!("✗ 保存エラー: {}", e));
+    // ボタン行: 保存と削除
+    ui.horizontal(|ui| {
+        if ui.button("APIキーを保存").clicked() {
+            if state.api_key_input.trim().is_empty() {
+                state.settings_message = Some("⚠ APIキーを入力してください".to_string());
+            } else {
+                match config::store_api_key(&mut state.config, state.api_key_input.trim()) {
+                    Ok(_) => {
+                        state.api_key_registered = true;
+                        state.api_key_input.clear();
+                        state.settings_message =
+                            Some("✓ APIキーを暗号化して保存しました".to_string());
+                    }
+                    Err(e) => {
+                        state.settings_message = Some(format!("✗ 保存エラー: {}", e));
+                    }
                 }
             }
         }
-    }
+
+        // 削除ボタン: APIキー登録済みの場合のみ有効
+        let delete_button = ui.button("削除");
+        if delete_button.clicked() && state.api_key_registered {
+            // APIキーを削除（設定から暗号化キーをクリア）
+            state.config.encrypted_api_key = None;
+            match config::save(&state.config) {
+                Ok(_) => {
+                    state.api_key_registered = false;
+                    state.api_key_input.clear();
+                    state.settings_message = Some("✓ APIキーを削除しました".to_string());
+                }
+                Err(e) => {
+                    state.settings_message = Some(format!("✗ 削除エラー: {}", e));
+                }
+            }
+        }
+    });
 
     // 登録状態の表示
     ui.add_space(4.0);

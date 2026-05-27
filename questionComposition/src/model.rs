@@ -63,3 +63,14 @@ impl std::fmt::Display for LlmProvider {
         }
     }
 }
+
+/// デフォルトルール（暗号化版）
+/// test_development.md と test_guideline.md は重要な研究内容なため、
+/// AES-192 で暗号化し、UI に表示せず、LLM 生成時のみ復号する。
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DefaultRules {
+    /// test_development.md を AES-192 で暗号化したもの（Base64: "nonce:ciphertext"）
+    pub development_rule_encrypted: String,
+    /// test_guideline.md を AES-192 で暗号化したもの（Base64: "nonce:ciphertext"）
+    pub guideline_rule_encrypted: String,
+}

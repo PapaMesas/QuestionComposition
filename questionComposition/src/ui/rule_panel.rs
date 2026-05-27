@@ -33,6 +33,7 @@ pub fn show(ui: &mut Ui, state: &mut AppState) {
                         rule_set.source_label
                     ));
                     state.rule_set = rule_set;
+                    state.current_rules_are_default = false;  // カスタムルール使用
                 }
                 Err(e) => {
                     state.rule_message = Some(format!("✗ 読み込みエラー: {}", e));
@@ -45,6 +46,7 @@ pub fn show(ui: &mut Ui, state: &mut AppState) {
     if ui.button("デフォルトルールに戻す").clicked() {
         state.rule_set = RuleSet::load_defaults();
         state.rule_message = Some("✓ デフォルトルールに戻しました".to_string());
+        state.current_rules_are_default = true;  // デフォルトルール使用
     }
 
     // メッセージ表示
@@ -56,15 +58,23 @@ pub fn show(ui: &mut Ui, state: &mut AppState) {
     ui.add_space(8.0);
 
     // ルール本文をプレビュー表示 (スクロール可能)
-    ui.label("ルール内容プレビュー:");
-    egui::ScrollArea::vertical()
-        .id_source("rule_preview_scroll")
-        .max_height(200.0)
-        .show(ui, |ui| {
-            ui.add(
-                egui::TextEdit::multiline(&mut state.rule_set.content.clone())
-                    .desired_width(f32::INFINITY)
-                    .interactive(false),
-            );
-        });
+    // デフォルトルール（暗号化）の場合は表示しない（機能4の要件）
+    if !state.current_rules_are_default {
+        ui.label("ルール内容プレビュー:");
+        egui::ScrollArea::vertical()
+            .id_source("rule_preview_scroll")
+            .max_height(200.0)
+            .show(ui, |ui| {
+                ui.add(
+                    egui::TextEdit::multiline(&mut state.rule_set.content.clone())
+                        .desired_width(f32::INFINITY)
+                        .interactive(false),
+                );
+            });
+    } else {
+        ui.colored_label(
+            egui::Color32::GRAY,
+            "※ デフォルトルールは表示されません（暗号化保護）",
+        );
+    }
 }

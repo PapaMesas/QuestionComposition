@@ -3,7 +3,7 @@
 // タブ形式で「API設定」「設問取り込み」「選択肢数設定」「ルール設定」「作問生成」を切り替える。
 
 use crate::config::{self, AppConfig};
-use crate::model::{QuestionSheet, QuestionWithChoices};
+use crate::model::{QuestionSheet, QuestionWithChoices, DefaultRules};
 use crate::rule_loader::RuleSet;
 use crate::ui::{export_panel, generate_panel, import_panel, question_panel, rule_panel, settings_panel};
 
@@ -34,6 +34,12 @@ pub struct AppState {
     pub rule_set: RuleSet,
     /// ルールパネルのメッセージ
     pub rule_message: Option<String>,
+    /// 暗号化されたデフォルトルール（test_development.md, test_guideline.md）
+    pub default_rules: Option<DefaultRules>,
+    /// AES-192 復号用キー（192ビット = 24バイト）
+    pub aes_192_key: [u8; 24],
+    /// 現在のルールがデフォルトかどうか
+    pub current_rules_are_default: bool,
 
     // --- 生成関連 ---
     /// 生成中フラグ
@@ -58,6 +64,12 @@ impl AppState {
         // 暗号化されたキーがあれば登録済みとみなす
         let api_key_registered = config.encrypted_api_key.is_some();
 
+        // AES-192 キー: ホスト名ベースで決定的に生成
+        let aes_192_key = derive_aes192_key();
+
+        // デフォルトルール（暗号化版）を読み込む
+        let default_rules = load_default_rules_encrypted(&aes_192_key);
+
         Self {
             config,
             api_key_input: String::new(),
@@ -69,6 +81,9 @@ impl AppState {
             settings_confirmed: false,
             rule_set: RuleSet::default(),
             rule_message: None,
+            default_rules,
+            aes_192_key,
+            current_rules_are_default: true,
             generating: false,
             generation_progress: 0,
             generation_total: 0,
@@ -78,6 +93,33 @@ impl AppState {
             export_panel: export_panel::ExportPanelState::default(),
         }
     }
+}
+
+/// AES-192 キーをホスト名ベースで導出する（192ビット = 24バイト）
+fn derive_aes192_key() -> [u8; 24] {
+    use sha2::{Digest, Sha256};
+
+    let hostname = std::env::var("HOSTNAME")
+        .or_else(|_| std::fs::read_to_string("/etc/hostname").map(|s| s.trim().to_string()))
+        .unwrap_or_else(|_| "default_host".to_string());
+
+    let salt = b"question_composer_aes192_salt_v1";
+    let mut hasher = Sha256::new();
+    hasher.update(salt);
+    hasher.update(hostname.as_bytes());
+    let result = hasher.finalize();
+
+    // SHA-256 は32バイト、最初の24バイトを使用
+    let mut key = [0u8; 24];
+    key.copy_from_slice(&result[..24]);
+    key
+}
+
+/// デフォルトルールを暗号化して読み込む
+fn load_default_rules_encrypted(key: &[u8; 24]) -> Option<DefaultRules> {
+    use crate::rule_loader::load_and_encrypt_default_rules;
+
+    load_and_encrypt_default_rules(key).ok()
 }
 
 /// アクティブなタブ

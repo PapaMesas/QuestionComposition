@@ -1,8 +1,11 @@
 // rule_loader.rs
 // 目的: 選択肢生成ルール (.md ファイル) を読み込み、LLM プロンプトへ渡す文字列を返す。
-// デフォルトルールは ./InputMaterials/ 内の2ファイルをあらかじめ組み込む。
+// デフォルトルールは AES-192 で暗号化して保持し、LLM 生成時のみ復号する。
+// UI には表示しない。
 
 use std::path::Path;
+use crate::model::DefaultRules;
+use crate::config::crypto;
 
 /// デフォルトルールのパス一覧 (プロジェクトルートからの相対パス)
 const DEFAULT_RULE_PATHS: &[&str] = &[
@@ -17,6 +20,15 @@ pub struct RuleSet {
     pub content: String,
     /// ルールのソース説明 (UI 表示用)
     pub source_label: String,
+}
+
+/// デフォルトルール情報（暗号化版を保持）
+#[derive(Debug, Clone)]
+pub struct EncryptedDefaultRules {
+    /// 暗号化された development ルール
+    pub development_encrypted: String,
+    /// 暗号化された guideline ルール
+    pub guideline_encrypted: String,
 }
 
 impl Default for RuleSet {
@@ -76,6 +88,52 @@ fn fallback_rule() -> String {
 - 明らかな誤答や遊び選択肢を含めないこと
 "#
     .to_string()
+}
+
+/// デフォルトルールを読み込んで AES-192 で暗号化する
+/// AES-192 用の固定キー（192ビット = 24バイト）を使用
+pub fn load_and_encrypt_default_rules(key: &[u8; 24]) -> Result<DefaultRules, std::io::Error> {
+    // test_development.md を読み込む
+    let dev_content = std::fs::read_to_string(DEFAULT_RULE_PATHS[0])
+        .unwrap_or_else(|_| fallback_rule());
+
+    // test_guideline.md を読み込む（存在しない場合はfallback）
+    let guide_content = if DEFAULT_RULE_PATHS.len() > 1 {
+        std::fs::read_to_string(DEFAULT_RULE_PATHS[1])
+            .unwrap_or_else(|_| fallback_rule())
+    } else {
+        fallback_rule()
+    };
+
+    // AES-192 で暗号化
+    let dev_encrypted = crypto::encrypt_aes192(dev_content.as_bytes(), key)
+        .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e.to_string()))?;
+    let guide_encrypted = crypto::encrypt_aes192(guide_content.as_bytes(), key)
+        .map_err(|e| std::io::Error::new(std::io::ErrorKind::Other, e.to_string()))?;
+
+    Ok(DefaultRules {
+        development_rule_encrypted: dev_encrypted,
+        guideline_rule_encrypted: guide_encrypted,
+    })
+}
+
+/// AES-192 で暗号化されたデフォルトルールを復号する
+pub fn decrypt_default_rules(
+    rules: &DefaultRules,
+    key: &[u8; 24],
+) -> Result<(String, String), anyhow::Error> {
+    use anyhow::Context;
+
+    let dev_bytes = crypto::decrypt_aes192(&rules.development_rule_encrypted, key)
+        .context("Failed to decrypt development rule")?;
+    let dev_text = String::from_utf8(dev_bytes).context("Invalid UTF-8 in decrypted development rule")?;
+
+    let guide_bytes = crypto::decrypt_aes192(&rules.guideline_rule_encrypted, key)
+        .context("Failed to decrypt guideline rule")?;
+    let guide_text = String::from_utf8(guide_bytes)
+        .context("Invalid UTF-8 in decrypted guideline rule")?;
+
+    Ok((dev_text, guide_text))
 }
 
 #[cfg(test)]

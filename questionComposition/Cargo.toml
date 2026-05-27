@@ -28,7 +28,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 toml = "0.8"
 
-# Encryption (AES-256-GCM)
+# Encryption (AES-256-GCM for API keys, AES-192-GCM for default rules)
 aes-gcm = "0.10"
 rand = "0.8"
 

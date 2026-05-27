@@ -92,12 +92,38 @@ fn run_generation(state: &mut AppState) {
     let mut errors = Vec::new();
 
     for question in &sheet.questions {
-        match generator::generate_choices(
-            client.as_ref(),
-            &sheet.subject,
-            question,
-            &state.rule_set,
-        ) {
+        // デフォルトルール使用時と カスタムルール使用時 で呼び出し関数を切り替え
+        let result = if state.current_rules_are_default {
+            // デフォルトルール（暗号化）を使用
+            match &state.default_rules {
+                Some(default_rules) => generator::generate_choices_with_default(
+                    client.as_ref(),
+                    &sheet.subject,
+                    question,
+                    default_rules,
+                    &state.aes_192_key,
+                ),
+                None => {
+                    // フォールバック: デフォルトルール読み込み失敗時はカスタムルール使用
+                    generator::generate_choices(
+                        client.as_ref(),
+                        &sheet.subject,
+                        question,
+                        &state.rule_set,
+                    )
+                }
+            }
+        } else {
+            // カスタムルールを使用
+            generator::generate_choices(
+                client.as_ref(),
+                &sheet.subject,
+                question,
+                &state.rule_set,
+            )
+        };
+
+        match result {
             Ok(qwc) => results.push(qwc),
             Err(e) => errors.push(format!("問題{}: {}", question.question_no, e)),
         }
